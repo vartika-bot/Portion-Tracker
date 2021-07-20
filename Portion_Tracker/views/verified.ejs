@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign-up form</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Righteous&family=Sacramento&display=swap" rel="stylesheet">
+
+
+
+</head>
+<style type="text/css">
+  body {
+    background-image: url(https://i.pinimg.com/originals/e9/c1/7d/e9c17d64e21fcb6c267b4fe6e16a6a4a.jpg);
+    background-size: 90%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .autocenter {
+    float: none;
+    margin: auto;
+  }
+
+  h1 {
+  padding: 2rem;
+font-family: 'Poiret One', cursive;
+font-weight: bold;
+}
+h2 {
+  padding: 1.5rem;
+}
+  .card {
+    margin-top: 20% ;
+    background-color: white;
+  }
+  .labelmail{
+    padding: 7%;
+  }
+  .full{
+    padding: 5%;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="col-sm-6 autocenter">
+      <div class="card">
+        <h1><%= email; %></h1>
+        <div class="contact">
+
+          <form method="POST" action="send">
+
+            <h1><%= email; %></h1>
+            <p>
+      
+              <input type="hidden" name="email" required>
+            </p>
+
+            <p class="full">
+              <button type="submit"  class="btn btn-outline-info">Submit</button>
+            </p>
+          </form>
+      </div>
+
+      </div>
+    </div>
+</div>
+</body>
+
+</html>

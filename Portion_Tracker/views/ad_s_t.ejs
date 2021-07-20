@@ -1,0 +1,67 @@
+<!-- include header -->
+<%- include('_header') %>
+<!-- /include header -->
+
+<title>ADMIN</title>
+<style>
+    h4{  background-color: rgba(255, 255, 255, 0.637);  
+      color: rgb(9, 110, 117); 
+   font-family: 'Montserrat', 'sans-serif';
+    }
+    </style>
+<main id="site-main">
+    <div class="container">
+<center>
+    <!-- form handling -->
+    <div class="exist" style= "width:350px;">
+     <h3 style="background-color: rgba(255, 255, 255, 0.637);  color: rgb(9, 110, 117);  font-family: 'Montserrat', 'sans-serif';">Existing Lecture Details</h3>
+     <h4>Name: <%=name;%></h4>
+     <h4>Branch: Kalyan</h4>
+        </div>
+   
+      
+     <!-- <form action="/" method="post"> -->
+     <table class="table" style="width:850px">
+         <thead style="background-color: rgba(0,0,0,.2);">
+             <tr>
+                 <th>Class Manager</th>
+                 <th>Teacher</th>
+                 <th>Course</th>
+                 <th>Chapter</th>
+                 <th>Duration</th>
+                 <th>Start</th>
+                 <th>End</th>
+                 
+            
+             </tr>
+         </thead>
+        
+         <tbody>
+
+             <tr>
+              
+                 <% details.forEach(function(item){ %>
+                
+                 <td>Poonam Singh</td>
+                 <td><%=item.t %></td>
+                 <td><%=item.c %></td>
+                 <td><%=item.chapters%></td>
+                 <td><%=item.duration %></td>
+                 <td><%=item.start %></td>
+                 <td><%=item.end %></td>
+                
+             </tr>
+             <% }) %>
+           
+         </tbody>
+       
+     </table>
+
+
+    <!-- /form handling -->
+ </div>
+</main>
+</center>
+<!-- include footer -->
+<%- include('_footer') %>
+<!-- /include footer -->

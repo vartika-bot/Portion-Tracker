@@ -1,0 +1,378 @@
+<!-- include header -->
+<%- include('_header') %>
+<!-- /include header -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Righteous&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Montserrat&display=swap');
+        h3{
+           
+            /* padding-left: 30%; */
+           margin-bottom: 2%; 
+            font-size: 1.5 rem;
+            font-weight: bolder;
+              }
+        
+    
+        
+        @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+    
+    :root{
+        --dark: #2b2d42;
+        --light: #adb5bd;
+        --border: #dee2e6;
+        --border-btn: #edf2f4;
+    }
+    
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    a {
+        text-decoration: none;
+        font-family: 'PT Sans', sans-serif;
+    }
+    
+    .container{
+        max-width: 1024px;
+        margin: auto;
+        /* padding: 0% 20%; */
+    }
+    .navbar-nav{
+        padding-left: 10%;
+    }
+    
+    /* .navbar-nav .nav-item .nav-link{
+        padding: 20% 10%;
+    } */
+    .nav-brand{
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    
+    .d-flex
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .justify-between
+    {
+        justify-content: space-between;
+    }
+    
+    .text-center
+    {
+        text-align: center;
+    }
+    
+    .border-shadow{
+        border: 1px solid var(--border-btn);
+        box-shadow:1px 3px 10px #e9ecef ;
+    
+    }
+    
+    .text-dark{
+        color: var(--dark);
+    }
+    
+    .exist{
+        background-image: rgba(6, 255, 255, 0.2)
+    }
+    
+    .inline
+    {
+        display: inline-block;
+    }
+    
+    .text-light{
+        color: var(--light);
+    }
+    
+    text-gradient{
+        background: linear-gradient(to right #1597bb #8fd6e1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color:#adb5bd;
+    }
+    
+    .navbar .navbar-expand-lg{
+    background-color: #c6f0f5;
+    }
+    #site-main{
+       
+        margin-top: 6em;
+        
+    }
+    
+    #site-main .container .box-nav > a{
+        /* font-size: 0.7em; */
+        padding: 1.2em 1em;
+    }
+    
+    #site-main .container form{
+        margin: 2em 0;
+    }
+    
+    table{
+        border-radius: 2%;
+        border-spacing: 0px;
+        width: 100%;
+    }
+    
+    .table td, .table th{
+        background-color:rgba(255, 255, 255, 0.8);
+        padding: .75em;
+        vertical-align: middle;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        font-size: 1.2rem;
+        color:black;
+        font-style: var(--dark);
+        font-family: 'Montserrat', 'sans-serif';
+        font-weight: 600;
+        
+    }
+    
+    .table td > a.btn{
+        padding: .2em;
+      
+       
+    }
+    
+    .table tr:hover{
+        background-color: #5ef2f7;
+    }
+    
+    .table tr:hover td > a{
+        box-shadow: none;
+    }
+    
+    .table .thead-dark th{
+        color: #fff;
+        background-color: var(--dark) ;
+        border-color: #32383e;
+    }
+    
+    @media only screen and (max-width: 1024px){
+        table, thead, tbody, th, td, tr{
+            display: block;
+        }
+    
+        thead tr{
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    
+        tr { border: 1px solid var(--border);}
+    
+        td{
+            border: none;
+            position: relative;
+        }
+    
+    }
+    
+    /*  add user & update user template */
+    .form-title{
+        margin-top: 2em;
+    }
+    
+    .form-title > h2{
+        padding: .5em 0;
+    }
+    
+    .new_user{
+        max-width: 786px;
+        margin: auto;
+    }
+    
+    #update_user .form-group,
+    #add_user .form-group{
+        margin: .4em 0;
+    }
+    
+    #update_user .form-group input[type="text"],
+    #add_user .form-group input[type="text"]{
+        width: 100%;
+        padding: .6em 1em;
+        margin: .5em 0;
+        border: 1px solid var(--border);
+        font-family: 'Barlow', sans-serif;
+        font-size: 0.7em;
+        border-radius: .2em;
+    }
+    
+    #update_user .form-group .radio,
+    #add_user .form-group .radio{
+        margin: 1em 2em;
+    }
+    
+    /* adding style to radio buttons */
+    .radio input[type='radio']{
+        position: absolute;
+        opacity: 0;
+    }
+    body{
+        filter: opacity(100%);
+    }
+    
+    
+    #update_user .form-group .btn,
+    #add_user .form-group .btn{
+        width: 100%;
+        padding: .9em 1em;
+        background-color:#16db93; 
+        border: none;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 0.7em;
+        cursor: pointer;
+        border-radius: .2em;
+        margin: .5em 0;
+    }
+    
+    #update_user .form-group .btn:hover,
+    #add_user .form-group .btn:hover{
+        background-color: var(--dark);
+        color: var(--border);
+    }
+    .ctn {
+      background: #c4cfe6;
+      background-image: -webkit-linear-gradient(top, #c4cfe6, #adc9db);
+      background-image: -moz-linear-gradient(top, #c4cfe6, #adc9db);
+      background-image: -ms-linear-gradient(top, #c4cfe6, #adc9db);
+      background-image: -o-linear-gradient(top, #c4cfe6, #adc9db);
+      background-image: linear-gradient(to bottom, #c4cfe6, #adc9db);
+      -webkit-border-radius: 25;
+      -moz-border-radius: 25;
+      border-radius: 25px;
+      -webkit-box-shadow: 5px 3px 9px #666666;
+      -moz-box-shadow: 5px 3px 9px #666666;
+      box-shadow: 5px 3px 9px #666666;
+      font-family: Arial;
+      color: #050005;
+      font-size: 15px;
+      padding: 10px 20px 10px 20px;
+      border: dotted #adc9db 0px;
+      text-decoration: none;
+    }
+    
+    .ctn:hover {
+      background: #d4f9ff;
+      text-decoration: none;
+    }
+    .btn:hover {
+  background: rgba(0, 0, 0, 0.425);
+  text-decoration: none;
+}
+    </style>
+     <nav class="navbar navbar-expand-lg " style="background-color: rgba(0,0,0,.3);">
+        <a class="navbar-brand"   style="font-family: 'Montserrat', sans-serif; font-weight: bold; color:#d4f9ff;"  href="#">FCRIT, Thane</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link btn" style="font-family: 'Montserrat',sans-serif; padding-left: 90px; font-size: 1.3rem; font-weight: bold; color:#d4f9ff;"  href="add_lecture_t"> ADD A LECTURE  <i class="fas fa-plus"></i>  </a>
+              </li>
+            <li class="nav-item ">
+              <a class="nav-link btn" style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: bold; padding-left:90px;  color:#d4f9ff;"  href="student_t">STUDENTS  <i class="fas fa-user-graduate"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn" style="padding-left:90px;  font-size: 1.3rem; font-weight: bold; font-family: 'Montserrat', sans-serif; color:#d4f9ff;" href="teacher">TEACHER  <i class="fas fa-chalkboard-teacher"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn"  style="font-family: 'Montserrat', sans-serif; padding-left:90px; font-size: 1.3rem;font-weight: bold;  color:#d4f9ff;" href="courses_new">COURSES  <i class="fas fa-book"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn"  style=" margin-right:0px; padding-left: 150px;font-family: 'Montserrat', sans-serif;  font-size: 1.3rem; font-weight: bold;  color:#d4f9ff;" href="/logout">LOG OUT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+<main id="site-main">
+    <div class="container">
+        <div class="filter" style="margin-left:10% ; margin-bottom: 5%">
+            <i class="fas fa-angle-double-left"></i>  <a href="home_t" style="font-size: 2rem;">Dashboard</a>
+          
+        </div>
+       <div >
+           <a href="/add_user_t"   style= "margin-left: 10%;">
+            <span class="ctn" style="margin-top:10%;font-size: 1.7rem;  font-family: 'Montserrat', 'sans-serif';" >Add Student  <i class="fas fa-user-plus"></i></span>
+           </a>
+           
+        </div>
+        
+        <!-- form handling -->
+        <center>
+        <div class="exist" style= "width:350px;">
+            <h3 style="background-color: rgba(255, 255, 255, 0.637);  color: rgb(9, 110, 117);  font-family: 'Montserrat', 'sans-serif';">Existing Student Details</h3>
+           </div>
+          
+            <!-- <form action="/" method="post"> -->
+            <table class="table" style="width:850px">
+                <thead style="background-color: rgba(0,0,0,.2);">
+                    <tr>
+                        <!-- <th></th> 	 -->
+                        <th>Name</th> 	
+                        <th>Email</th>	
+                        <th>Phone Number</th> 
+                        <th>Joining Date</th> 	
+                        <th>Branch</th> 
+                        <th>Action</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <% details.forEach(function(item){ %>
+                        <form action="/delete_st" method="post"> 
+                    <tr> 
+                        
+                        <td><%=item.name %></td>
+                        <td><%=item.email %></td>
+                        <td><%=item.phonenumber %></td>
+                        <td><%=item.joiningdate %></td>
+                        <td>Thane</td>
+                        <td>
+                            <a href="/update_user_t?id=<%=item._id %>" class="btn border-shadow update">
+                                <span class="text-gradient">
+                                    <i class="fas fa-user-edit"></i>
+                                </span>
+                            </a>
+                            
+                            <a  class="btn border-shadow delete">
+                                <span class="text-gradient">
+                                   <button type="submit"  name="del" value="<%=item._id%>" class="btn btn-light"><i class="fas fa-trash-alt"></i></button> 
+                                </span>
+                            </a>
+                        </form>
+                        </td>
+                    </tr>
+                   
+                    <% }) %>
+                    
+                </tbody>
+            </table>
+        <!-- </form>  -->
+        
+        <!-- /form handling-->
+    </div>
+</main>
+</center>
+<!-- /main site -->
+   <!-- include footer -->
+<%- include('_footer') %>
+<!-- /include footer -->

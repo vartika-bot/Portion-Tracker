@@ -1,0 +1,67 @@
+<!-- include header -->
+<%- include('_header_') %>
+<!-- /include header -->
+
+
+
+
+  <!-- Main Site -->
+ 
+  <section>
+    <div class="imageBx">
+      
+      <img  class="women"src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80" alt="Avatar">
+      
+    </div>
+    <div class="contentBx" style="padding-top: 10px; ">
+        <div class="formBx" style="width: 400px; ">
+               <a href="student_v"><i class="fas fa-angle-double-left"></i> All Students</a>
+         
+    
+        <div class="form-title text-center">
+            <h2 class="text-dark">New User</h2>
+            <br>
+            <span class="text-light-light">Use the below form to create a new account</span>
+        </div>
+      
+<form action="/add_user_v" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="inputBx">
+            <label for="name" class="text-light">Name: </label>
+            <input type="text" name="name" id="name" placeholder="Mark Stoenis">
+        </div>
+        <div class="inputBx">
+            <label for="Email" class="text-light">Email: </label>
+            <input type="text" name="email" id="email" placeholder="example@gmail.com">
+        </div>
+        <div class="inputBx">
+            <label for="Phone Number" class="text-light">Phone Number:</label>
+            <input type="text" name="phonenumber" id="phonenumber" placeholder="00000 00000">
+        </div>
+        <div class="inputBx">
+            <label for="Joining Date" class="text-light">Joining Date: </label>
+            <input type="date"  class="form-control" name="joiningdate" id="joiningdate" value="" placeholder="03-04-2020" required>
+
+        </div>
+        <div class="inputBx">
+            <label for="Joining Date" class="text-light"> Branch: </label>
+            <input   value="Vashi" class="form-control" value="Vashi" placeholder="Enter Branch" name="branchs" id="branchs" required>
+        </div>
+       
+       
+       
+        <div class="inputBx">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+</section>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('_footer_') %>
+<!-- /include footer -->

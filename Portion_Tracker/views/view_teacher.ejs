@@ -1,0 +1,60 @@
+<!-- include header -->
+<%- include('_header') %>
+<!-- /include header -->
+
+<title>View Teacher</title>
+<main id="site-main">
+    <div class="container">
+       <div class="box-nav d-flex-justify-between">
+      <center>
+       <!-- form handling -->
+        <!-- <form action="/" method="post"></form> -->
+        <div class="exist" style= "width:350px;">
+            <h3 style="background-color: rgba(255, 255, 255, 0.637);  color: rgb(9, 110, 117);  font-family: 'Montserrat', 'sans-serif';">Existing Teacher Details</h3>
+           </div>
+          
+            <!-- <form action="/" method="post"> -->
+            <table class="table" style="width:850px">
+                <thead style="background-color: rgba(0,0,0,.2);">
+                    <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Course</th>
+                    <th>Branch</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <% details.forEach(function(item){ %>
+                        
+                        <tr>
+                            <!-- <td><%=   1 %></td> -->
+                            <td><%=item.name %></td>
+                            <td><%=item.email %></td>
+                            <td><%=item.phonenumber %></td>
+                            <td><%=item.c %></td>
+                            <td><%=item.branch %></td>
+                            <td>
+                       
+                                <a href="ad_teach?id=<%=item._id %>" class="btn border-shadow update">
+                                    <span class="text-gradient">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <!-- </form> -->
+
+       <!-- /form handling -->
+    </div>
+</main>
+</center>
+<!-- /main site -->
+<!-- include footer -->
+<%- include('_footer') %>
+<!-- /include footer -->

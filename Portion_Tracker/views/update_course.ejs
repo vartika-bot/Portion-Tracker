@@ -1,0 +1,61 @@
+<!-- include header -->
+<%- include('_header_'); -%>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <section style="background-color: rgb(255, 248, 255);">
+    <div class="imageBx">
+      
+      <img  class="women"src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"  alt="Avatar">
+      
+    </div>
+    <div class="contentBx" style="padding-top: 0%;">
+        <div class="formBx"> 
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+           <br>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Course</h2>
+            <br>
+          
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+
+ <form action="/update_course" method="POST" id="update_user" class="needs-validation" nonvalidate autocomplete="off">
+   
+    <div class="new_user">
+        <div class="inputBx">
+            <label for="name" class="text-light"> Subject Name:</label>
+            <input type="text" name="name" id="name" value="<%=name; %>" placeholder="Mark Stoenis">
+        </div>
+        <div class="inputBx">
+            <label for="fees" class="text-light">Total Fees:</label>
+            <input type="text" name="fees" id="fees" value="<%=fees; %>" placeholder="In Rupees">
+        </div>
+    
+        <div class="inputBx">
+            <label for="chapter" class="text-light">Chapter numbers:</label>
+            <input type="text" name="chapter" id="chapter" value="<%=chapter; %>" placeholder="Nunber of Chapters in Module">
+        </div>
+       
+        <div class="inputBx">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+</div>
+                         
+    </div>
+
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('_footer_'); -%>
+
+<!-- /include footer -->

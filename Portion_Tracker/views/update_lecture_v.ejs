@@ -1,0 +1,196 @@
+<!-- include header -->
+<%- include('_header_'); -%>
+<!-- /include header -->
+       <script>  
+      function favTutorial() {
+        var mylist = document.getElementById("myList");
+        document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
+      }
+      
+      function fav() {
+        var courselist = document.getElementById("courselist");
+        document.getElementById("c").value = courselist.options[courselist.selectedIndex].text;
+      }
+      function Tutorial() {
+        var teacherList = document.getElementById("teacherList");
+        document.getElementById("t").value = teacherList.options[teacherList.selectedIndex].text;
+      }
+      function chap() {
+        var chapList = document.getElementById("chapList");
+        document.getElementById("chapters").value = chapList.options[chapList.selectedIndex].text;
+      }
+    </script> 
+
+  <!-- Main Site -->
+  <section>
+    <div class="imageBx">
+      
+      <img  class="women"src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80" alt="Avatar">
+      
+    </div>
+   
+    <div class="contentBx">
+      <div class="formBx">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/home_v"><i class="fas fa-angle-double-left"></i> All Lectures</a>
+           </div>
+           <br>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Lecture</h2>
+            <br>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+
+   <form action="/update_lecture_v" method="POST" id="update_user" class="needs-validation" nonvalidate autocomplete="off">
+   
+    <div class="form-row">
+        <div class="form-group col-md-4">
+          
+          <div class="inputBx">
+            <b> Select the Student </b>
+            <select class="custom-select"id = "myList" onchange = "favTutorial()" >
+              <option>    Choose Student   </option>
+              <table class="table">
+                     <tbody>
+                      <% stud.forEach(function(item){ %>
+                      <tr>
+                          <option value=""><td><%=item.name %></td></option>
+                      </tr>
+                     </tbody>
+                    </table>
+              <% }) %>
+            </select>
+            <br>
+            <label for="student" class="text-dark">Selected Student is :</label> 
+            <input type = "text" id = "favourite" value="<%= favourite; %>" class="form-control"size = "20" name="favourite" required> 
+            
+          </div>
+        </div>
+        
+        
+        
+        
+        <div class="form-group col-md-4">
+          <div class="inputBx">
+            <b> Select the Teacher </b>
+            <select class="custom-select" id = "teacherList" onchange = "Tutorial()" >
+              <option>    Choose Teacher   </option>
+              <table class="table">
+                     <tbody>
+                      <% teach.forEach(function(item){ %>
+                      <tr>
+                          <option value=""><td><%=item.name %></td></option>
+                      </tr>
+                     </tbody>
+               </table>
+                 <% }) %>
+            </select>
+            <br>
+            <label for="teacher" class="text-dark">Selected Teacher is :</label> 
+            <input type = "text" id = "t"  value="<%= t; %>" class="form-control" size = "20"  name="t" required>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="form-row">
+        
+        <div class="form-group col-md-4">
+          <div class="inputBx">
+            <b>Select the Course </b>
+            <select class="custom-select" id = "courselist" onchange = "fav()" >
+              <option> Choose Course </option>
+              <table class="table">
+                <tbody>
+                 <% course.forEach(function(item){ %>
+                 <tr>
+                     <option value=""><td><%=item.name %></td></option>
+                 </tr>
+                </tbody>
+          </table>
+            <% }) %>
+            </select>
+            <br>
+            <label for="teacher" class="text-dark">Selected Course is :</label> 
+            <input type = "text" id = "c" value="<%=c; %>" class="form-control" size = "20"  name="c" required>
+          </div>
+        </div>
+        
+        
+        
+        <div class="form-group col-md-4">
+          
+          
+          <div class="inputBx">
+            <b>Select the Chapter </b>
+            <select class="custom-select" id = "chapList" onchange = "chap()" >
+              <option> ---Choose Chapter--- </option>
+              <option> Chapter 1 </option>
+              <option> Chapter 2 </option>
+              <option> Chapter 3</option>
+              <option> Chapter 4 </option>
+              <option> Chapter 5 </option>
+            </select>
+            <br>
+            <label for="teacher" class="text-dark">Selected Chapter is :</label> 
+            <input type = "text" class="form-control" id = "chapters" value="<%= chapters; %>"size = "20"  name="chapters" required>
+          </div>
+          
+          
+        </div>
+      </div>
+      
+      <div class="form-row">
+        
+        <div class="form-group col-md-4">
+          <div class="inputBx">
+            <label for="duration" class="text-dark"><b>  Date :</b> </label>
+            <input type = "date" id = "duration" value="<%=duration; %>" class="form-control" size = "20" name="duration" required>
+            
+            
+          </div>
+          
+        </div>
+        
+        <div class="form-group col-md-2">
+          <div class="inputBx">
+            <label for="startDate" class="text-dark"><b> Start Time :</b></label>
+            <input type = "time" id = "start" value="<%=start; %>" class="form-control" size = "20" placeholder="Start Date" name="start" required>
+            
+            
+          </div>
+          
+        </div>
+        <div class="form-group col-md-2">
+          <div class="inputBx">
+            <label for="startDate" class="text-dark"><b>End Date :</b></label>
+            <input type = "time" id = "end" value="<%=end; %>"class="form-control" size = "20" placeholder="End Date" name="end">
+            
+            
+          </div>
+          
+        </div>
+       
+      </div>
+      <br>
+        <div class="inputBx">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+</form>
+
+                         
+    </div>
+  </div>
+</section>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('_footer_'); -%>
+
+<!-- /include footer -->

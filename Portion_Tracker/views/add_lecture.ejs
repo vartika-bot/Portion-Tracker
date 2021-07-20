@@ -1,0 +1,217 @@
+<!-- include header -->
+<%- include('_header_') %>
+<!-- /include header -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+ Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> -->
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+<!-- Main Site --> 
+<style>
+  .custom-select{
+    font-size: 0.9rem;
+    color: black;
+  }
+  
+</style>
+
+
+
+
+<!-- A litttle Javascript -->
+<script>  
+  function favTutorial() {
+    var mylist = document.getElementById("myList");
+    document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
+  }
+  
+  function fav() {
+    var courselist = document.getElementById("courselist");
+    document.getElementById("c").value = courselist.options[courselist.selectedIndex].text;
+  }
+  function Tutorial() {
+    var teacherList = document.getElementById("teacherList");
+    document.getElementById("t").value = teacherList.options[teacherList.selectedIndex].text;
+  }
+  function chap() {
+    var chapList = document.getElementById("chapList");
+    document.getElementById("chapters").value = chapList.options[chapList.selectedIndex].text;
+  }
+</script>  
+
+<!--/ A litttle Javascript -->
+<!-- add course form -->
+<!-- ADD LECTURE DETAILS -->
+<section>
+  <div class="imageBx">
+    
+    <img  class="women"src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80" alt="Avatar">
+    
+  </div>
+  <div class="contentBx">
+   
+  <div class="formBx">
+      <div> 
+        <div class="filter">
+          <a href="home"><i class="fas fa-angle-double-left"></i> All Lectures</a>
+          <br>
+        </div>
+      </div>
+      
+        <br>
+        <h2>New Lecture</h2>
+        
+      <form action="/add_lecture" method="post">
+        
+        
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            
+            <div class="inputBx">
+              <b> Select the Student </b>
+              <select class="custom-select"id = "myList" onchange = "favTutorial()" >
+                <option>    Choose Student   </option>
+                <table class="table">
+                  <tbody>
+                    <% stud.forEach(function(item){ %>
+                      <tr>
+                        <option value=""><td><%=item.name %></td></option>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <% }) %>
+                </select>
+                <br>
+                <label for="student" class="text-dark">Selected Student is :</label> 
+                <input type = "text" id = "favourite" class="form-control"size = "20" placeholder=" Selected Student" name="favourite"> 
+                
+              </div>
+            </div>
+            
+            
+            
+            
+            <div class="form-group col-md-4">
+              <div class="inputBx">
+                <b> Select the Teacher </b>
+                <select class="custom-select" id = "teacherList" onchange = "Tutorial()" >
+                  <option>    Choose Teacher   </option>
+                  <table class="table">
+                    <tbody>
+                      <% teach.forEach(function(item){ %>
+                        <tr>
+                          <option value=""><td><%=item.name %></td></option>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <% }) %>
+                  </select>
+                  <br>
+                  <label for="teacher" class="text-dark">Selected Teacher is :</label> 
+                  <input type = "text" id = "t"  class="form-control" size = "20" placeholder="Selected teacher" name="t">
+                </div>
+                
+              </div>
+            </div>
+            
+            <div class="form-row">
+              
+              <div class="form-group col-md-4">
+                <div class="inputBx">
+                  <b>Select the Course </b>
+                  <select class="custom-select" id = "courselist" onchange = "fav()" >
+                    <option>     Choose Course   </option>
+                    <table class="table">
+                      <tbody>
+                        <% course.forEach(function(item){ %>
+                          <tr>
+                            <option value=""><td><%=item.name %></td></option>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <% }) %>
+                    </select>
+                    <br>
+                    <label for="teacher" class="text-dark">Selected Course is :</label> 
+                    <input type = "text" id = "c" class="form-control" size = "20" placeholder="Selected Course" name="c">
+                  </div>
+                </div>
+                
+                
+                
+                <div class="form-group col-md-4">
+                  
+                  
+                  <div class="inputBx">
+                    <b>Select the Chapter </b>
+                    <select class="custom-select" id = "chapList" onchange = "chap()" >
+                      <option>    Choose Chapter     </option>
+                      <option>Chapter 1 </option>
+                      <option> Chapter 2 </option>
+                      <option> Chapter 3 </option>
+                      <option> Chapter 4 </option>
+                      <option> Chapter 5 </option>
+                    </select>
+                    <br>
+                    <label for="teacher" class="text-dark">Selected Chapter is :</label> 
+                    <input type = "text" class="form-control" id = "chapters" size = "20" placeholder="Selected Chapter" name="chapters">
+                  </div>
+                  
+                  
+                </div>
+              </div>
+              
+              <div class="form-row">
+                
+                <div class="form-group col-md-4">
+                  <div class="inputBx">
+                    <label for="duration" class="text-dark"><b>  Date :</b> </label>
+                    <input type = "date" id = "duration" class="form-control" size = "20" placeholder="Hours" name="duration">
+                    
+                    
+                  </div>
+                  
+                </div>
+                
+                <div class="form-group col-md-2">
+                  <div class="inputBx">
+                    <label for="startDate" class="text-dark"><b> Start Time :</b></label>
+                    <input type = "time" id = "start" class="form-control" size = "20" placeholder="Start Date" name="start">
+                    
+                    
+                  </div>
+                  
+                </div>
+                <div class="form-group col-md-2">
+                  <div class="inputBx">
+                    <label for="startDate" class="text-dark"><b>End Time :</b></label>
+                    <input type = "time" id = "end" class="form-control" size = "20" placeholder="End Date" name="end">
+                    
+                    
+                  </div>
+                  
+                </div>
+                
+              </div>
+              <div>
+                <button type="submit" class="btn" >Submit</button>
+              </div>
+            </form>
+            
+            
+            
+          </div>
+          
+        </div>
+          <!-- /ADD LECTURE DETAILS -->
+          
+          <!-- /Main Site -->
+        </section>
+        
+        
+        <!-- include footer -->
+        <%- include('_footer_') %>
+        <!-- /include footer -->
