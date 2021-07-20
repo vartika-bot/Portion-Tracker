@@ -1,0 +1,95 @@
+<!-- include header -->
+<%- include('_header_') %>
+<!-- /include header -->
+<!-- Main Site -->
+<script>
+    function fav() {
+        var courselist = document.getElementById("courselist");
+        document.getElementById("c").value = courselist.options[courselist.selectedIndex].text;
+      }
+</script>
+<section>
+  <div class="imageBx">
+    <img  class="women"src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80" alt="Avatar">
+</div>
+
+    <div class="contentBx">
+        <div class="formBx">
+        <div class="box-nav d-flex justify-between"> 
+           <div class="filter">
+               <a href="teacher"> <i class="fas fa-angle-double-left"></i> All Teachers</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Add a new Teacher</h2>
+            <br>
+            <span class="text-light" style="font-size: 1rem; color:cadetblue;">Use the below form to add a new Teacher</span>
+        </div>
+       
+        <!-- add course form -->
+        <form action="/add_teacher" method="POST" id="add_user">
+            <div class="new_user">
+                <div class="inputBx">
+                    <label for="name" class="text-light">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Mark Stoenis">
+                </div>
+                <div class="inputBx">
+                    <label for="Email" class="text-light">Select the specialized Course:</label>
+                    <select style="padding: 1%; border-radius: 20px;"  class="custom-select" id = "courselist" onchange = "fav()" >
+                      <option> ---Choose Course--- </option>
+                      <table class="table">
+                        <tbody>
+                         <% course.forEach(function(item){ %>
+                         <tr>
+                             <option value=""><td><%=item.name %></td></option>
+                         </tr>
+                        </tbody>
+                  </table>
+                    <% }) %>
+                    </select>
+                    <br>
+                    <label for="course" class="text-light">Selected Course is :</label> 
+                
+                    <input type = "text" id = "c" class="form-control" size = "20" placeholder="Selected Course" name="c">
+                </div>
+               
+                <div class="inputBx">
+                    <label for="Email" class="text-light">Email:</label>
+                    <input type="text" name="email" id="email" placeholder="example@gmail.com">
+                </div>
+                <div class="inputBx">
+                    <label for="Phone Number" class="text-light">Phone Number:</label>
+                    <input type="text" name="phonenumber" id="phonenumber" placeholder="00000 00000">
+        
+                </div>
+                <div class="inputBx">
+                    <label for="Branch" class="text-light">Branch:</label>
+                    <input type="text" list="hosting-plan" class="form-control" placeholder="Enter Branch" name="branch" id="branch" required>
+                    <datalist id="hosting-plan">
+                    <option >Thane</option>
+                    <option >Panvel</option>
+                    <option>Vashi</option>
+                    <option >Kalyan</option>
+                    </datalist>
+        
+                  </div>
+
+        
+                <div class="inputBx">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+        
+            </div>
+        </form>
+    </div>
+    </div>
+       
+    </div>
+</div>
+</main>
+</section>
+
+
+<!-- include footer -->
+<%- include('_footer_') %>
+<!-- /include footer -->

@@ -1,0 +1,64 @@
+<!-- include header -->
+<%- include('_header_'); -%>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <section style="background-color: rgb(255, 248, 255);">
+    <div class="imageBx">
+      
+      <img  class="women"src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"  alt="Avatar">
+      
+    </div>
+    <div class="contentBx">
+        <div class="formBx"> 
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/student_t"><i class="fas fa-angle-double-left"></i> All Users</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update User</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+
+ <form action="/update_user_t" method="POST" id="update_user" class="needs-validation" nonvalidate autocomplete="off">
+   
+        <div class="inputBx">
+            <label for="name" class="text-light">Name:</label>
+            
+            <input type="text" name="name" id="name" value="<%= name; %>" >
+        </div>
+        <div class="inputBx">
+            <label for="Email" class="text-light">Email:</label>
+            <input type="text" name="email"  id="email" value="<%= email; %>" >
+        </div>
+        <div class="inputBx">
+            <label for="Email" class="text-light">Phone Number:</label>
+            <input type="text" name="phonenumber" id="phonenumber" value="<%= phonenumber; %>" >
+        </div>
+        <div class="inputBx">
+            <label for="Email" class="text-light">Joining Date:</label>
+            <input type="text" name="joiningdate" id="joiningdate" value="<%= joiningdate; %>" >
+        </div>
+        <div class="inputBx">
+            <label for="Email" class="text-light">Branch:</label>
+            <input type="text" name="branchs"  name="branchs"  value="Kalyan">
+        </div>
+        <div class="inputBx">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+</form>
+</div>
+                         
+    </div>
+
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('_footer_'); -%>
+
+<!-- /include footer -->

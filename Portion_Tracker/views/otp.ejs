@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign-up form</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Righteous&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Slabo+27px&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<style type="text/css">
+  /* body {
+    background-image: url(https://i.pinimg.com/originals/e9/c1/7d/e9c17d64e21fcb6c267b4fe6e16a6a4a.jpg);
+    background-size: 90%;
+    width: 100%;
+    height: 100%;
+  } */
+
+  .autocenter {
+    float: none;
+    margin: auto;
+  }
+
+  h1 {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+h4 {
+font-family: 'Merriweather', serif;
+}
+.card
+{ margin-top: 10%;
+ background-color: white;
+}
+.labelotp{
+font-family: 'Merriweather', serif;
+ padding: 2%;
+}
+
+  /* body {
+  position: absolute;
+  }
+
+  .autocenter {
+    float: none;
+    /* margin: auto; */
+  /* } */
+
+  h1 {
+    font-size: 1.5rem;
+  padding: 1.5rem;
+font-family: 'Poiret One', cursive;
+font-weight: bold;
+}
+/* h2 {
+  padding: 1.5rem;
+}
+  .card {
+    margin-top: 20% ;
+    background-color: rgba(255,255,255,0.8);
+    margin-left:15%;
+  }
+  .labelmail{
+    padding: 7%;
+  }
+  .full{
+    padding: 5%;
+  }
+  body{
+	background-color: rgb(250, 245, 250);
+	font-family:'Poppins', sans-serif;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+			font-family:'Poppins', sans-serif;
+		} */
+.custom-select{
+	padding: 1%; 
+	border-radius: 20px;
+}
+	section{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+
+	}
+section .imageBx {
+	filter: blur(50%);
+	filter:opacity(80%);
+	position: relative;
+		width: 70%;
+		height: 110%;
+        display: flex;
+}
+section .imageBx:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(225deg,#e900dd, #2493dd);
+		
+ z-index: 1;
+ mix-blend-mode: soft-light;
+
+}
+section .imageBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    object-fit: cover;
+	
+}
+ section .contentBx{
+/* 
+padding-top: 20%; */
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 width: 60%;
+	 height: 100%;
+	
+ }
+ section .contentBx .formBx{
+	
+	width: 500px;
+     margin-left: 10%;
+     margin-right: 5%;
+	
+ }
+section .contentBx .formBx h2{
+   
+color: #607d8b;
+font-weight: 600;
+font-size: 1.5em;
+text-transform: uppercase;
+margin-bottom: 20px;
+border-bottom:  4px solid #ff4584;
+display: inline-block;
+letter-spacing: 1px;
+}
+section .contentBx .formBx .inputBx
+{
+	margin-bottom: 20px;
+}
+
+section .contentBx .formBx .inputBx span{
+
+	margin-bottom: 5px;
+	display: inline-block;
+	color: #607db8;
+	font-weight: 300;
+	font-size: 10px;
+	letter-spacing: 1px;
+}
+section .contentBx .formBx .inputBx input{
+	width:40%;
+	padding: 5px 10px;
+	outline:none;
+	font-weight: 400;
+	border: 1px solid #607d8b;
+	font-size: 10x;
+    letter-spacing:  1px;
+	margin-bottom: 5px;
+    color: #607d8b;
+	background: transparent;
+	border-radius: 30px ;
+	margin-top: 2%;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]
+{
+	background: #ff4584;
+	color: #fff;
+	outline: none;
+	border: none;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+background: #f86a99;
+}
+
+section .contentBx .formBx .inputBx a{
+	color: #607d8b
+
+}
+.women{
+	width:150%;
+}
+.custom-select{
+ font-size: 0.7rem;
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Ubuntu';
+  color: #ffffff;
+  font-size: 10px;
+  background: #ff4584;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #f099b6;
+  background-image: -webkit-linear-gradient(top, #f099b6, #f06ea0);
+  background-image: -moz-linear-gradient(top, #f099b6, #f06ea0);
+  background-image: -ms-linear-gradient(top, #f099b6, #f06ea0);
+  background-image: -o-linear-gradient(top, #f099b6, #f06ea0);
+  background-image: linear-gradient(to bottom, #f099b6, #f06ea0);
+  text-decoration: none;
+}
+.text-light-light{
+	color:rgb(147, 168, 187);
+	font-size: 0.6rem;
+}
+.text-light{
+	color:slategray;
+}
+
+
+</style>
+
+<body>
+  <section>
+    <div class="imageBx">
+      <img  class="women"src="https://cdn.dribbble.com/users/1875932/screenshots/14282985/media/c041612ace84a42e7ff11429a3b987a5.jpg?compress=1&resize=1600x1200" alt="">
+    </div>
+  
+    
+      <div class="contentBx">
+      
+        <div class="formBx">
+        <h1> Enter OTP</h1>
+        
+        
+          <h4 style="font-size: 1rem; font-family: 'Ubuntu'; font-weight: 700 ;">An OTP has been sent to your registered Email ID</h4>
+         
+          <form method="POST" action="verify">
+            <div class="inputBx">
+              <label style="font-size: 1rem; font-family: 'Ubuntu';">Enter OTP:</label>
+              <input style="font-size: 1rem; font-family: 'Ubuntu';" type="text" placeholder="000000" name="otp" required>
+            </div>
+
+            <div class="inputBx">
+              <button type="submit"  class="btn btn-outline-info">Submit</button>
+            </div>
+
+          </form>
+          <br>
+          <form method="POST" action="resend">
+            <p class="full">
+              <button type="submit"  class="btn btn-outline-info">Resend OTP</button>
+            </p>
+          </form>
+        </div>
+      </div>
+</div>
+</div>
+</section>
+</body>
+
+</html>

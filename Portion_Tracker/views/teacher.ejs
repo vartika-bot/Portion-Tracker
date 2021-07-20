@@ -1,0 +1,96 @@
+<!-- include header -->
+<%- include('_header') %>
+<!-- /include header -->
+<style>
+    .ctn {
+  background: #c4cfe6;
+  background-image: -webkit-linear-gradient(top, #c4cfe6, #adc9db);
+  background-image: -moz-linear-gradient(top, #c4cfe6, #adc9db);
+  background-image: -ms-linear-gradient(top, #c4cfe6, #adc9db);
+  background-image: -o-linear-gradient(top, #c4cfe6, #adc9db);
+  background-image: linear-gradient(to bottom, #c4cfe6, #adc9db);
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  -webkit-box-shadow: 5px 3px 9px #666666;
+  -moz-box-shadow: 5px 3px 9px #666666;
+  box-shadow: 5px 3px 9px #666666;
+  font-family: Arial;
+  color: #050005;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: dotted #adc9db 0px;
+  text-decoration: none;
+}
+
+.ctn:hover {
+  background: #d4f9ff;
+  text-decoration: none;
+}
+</style>
+<main id="site-main">
+    <div class="container">
+        
+       <div style=" padding-left:7%; padding-bottom: 3%;">
+            <a href="add_teacher">
+            <span class="ctn" style="margin-top:10%; font-family: 'Montserrat', 'sans-serif';"><i class="fas fa-user-plus"></i> ADD Teacher</span>
+               </a>
+        </div>
+       
+   <center>
+       <!-- form handling -->
+        <!-- <form action="/" method="post"></form> -->
+        <div class="exist" style= "width:350px;">
+            <h3 style="background-color: rgba(255, 255, 255, 0.637);  color: rgb(9, 110, 117);  font-family: 'Montserrat', 'sans-serif';">Existing Teacher Details</h3>
+           </div>
+          
+            <!-- <form action="/" method="post"> -->
+            <table class="table" style="width:850px">
+                <thead style="background-color: rgba(0,0,0,.2);">
+                    <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Course</th>
+                    <th>Branch</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <% details.forEach(function(item){ %>
+                        <form action="/delete_teacher" method="post"> 
+                        <tr>
+                            <!-- <td><%=   1 %></td> -->
+                            <td><%=item.name %></td>
+                            <td><%=item.email %></td>
+                            <td><%=item.phonenumber %></td>
+                            <td><%=item.c %></td>
+                            <td><%=item.branch %></td>
+                    <td>
+                        <a href="/update_teacher?id=<%=item._id %>" class="btn border-shadow update">
+                            <span class="text-gradient">
+                                <i class="fas fa-user-edit"></i>
+                            </span>
+                        </a>
+                        <a  class="btn border-shadow delete">
+                            <span class="text-gradient">
+                                <button type="submit"  name="del" value="<%=item._id%>"  class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
+                            </span>
+                        </a>
+                    </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <!-- </form> -->
+
+       <!-- /form handling -->
+    </div>
+</main>
+</center>
+<!-- /main site -->
+<!-- include footer -->
+<%- include('_footer') %>
+<!-- /include footer -->
